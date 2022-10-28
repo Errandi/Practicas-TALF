@@ -1,0 +1,81 @@
+\documentclass{article}
+%Gummi|065|=)
+\title{\textbf{Practica 1}}
+\author{Omar Errandi}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Find theFind  the  power  set
+R$^3$ of R = {(1,1),(1,2),(2,3),(3,4)}.   Check  your  answer with the script powerrelation.m and write a LATEX document with the solution step by step.}
+
+	Como bien sabemos para calcular la potencia de un conjunto debemos de conocer las potencias anteriores. En este caso debemos de conocer la potencia 2 de la relacion (R$^2$).
+
+Checkeamos los apuntes y buscamos la definición de potencia de una  relacion:
+
+R$^n$ = $\Biggl\{$$\begin{array}{ll}
+		 R      & \mathrm{si\ } n = 0 \\
+		 (\{ (a,b) : \exists x \in A, (a,x)\in R^{n-1}  \wedge (x,b)\in R \}) & \mathrm{si\ }  n > 0 \\
+		 
+	       \end{array}$
+
+
+
+Procedemos a calcular la potencia dos de la relacion fijándonos en la formula anterior:
+
+R$^2$ = \{ (1,1), (1,2), (1,3), (1,4) \}
+
+Ya tenemos calculada la segunda potencia, por lo que ya podemos calcular la tercera (R$^3$):
+
+R$^3$ = \{ (1,1), (1,2), (1,3), (1,4) \}
+
+Ya tenemos la solucion. Podemos comprobar con Octave si es correcto o no mediante los siguientes comandos:
+
+
+\emph powerrelation ({['1','1'], ['1','2'],['2','3'],['3','4']}, 2)
+
+\emph powerrelation ({['1','1'], ['1','2'],['2','3'],['3','4']}, 3) 
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Within the folder “files”,find a TEX file in whose content appears the string  $\backslash$usepackage \{amsthm,amsmath\}.   Note: use grep and  escape  the  special characters with \ .  Complete the proof and answer the question.
+}
+
+Primero de todo abrimos la consola (bash de linux) y con el comando "ls" o "dir" vemos el directorio en el que estamos. 
+Una vez visto, nos dirijimos a la carpeta descargada "Practica1.tar.gz" descomprimida (con el comando "cd"). 
+
+Situados ya  en la carpeta Practica1 usamos el comando grep, que nos  permite filtrar y  encontrar las coincidencias. A continuacion usamos el string  que nos proporcionan en el  enunciado que hay que buscar ($\backslash$usepackage\{amsthm, amsmath\}).
+Y para finalizar el directorio a analizar desde el directorio en el que estamos "files/*"(el asterisco final es para buscar en todos los documentos de la carpeta).
+Con lo que nos queda el comando:
+
+
+
+\emph grep " $\backslash$usepackage\{amsthm, amsmath\}" files/*
+\\
+
+Una vez ejecutado obtenemos el resultado:
+
+
+
+
+\emph files/mainP.tex:$\backslash$usepackage\{amsthm, amsmath\}
+
+
+El resultado es el archivo que contiene dicho string, que es el archivo "mainP.tex".
+
+
+
+
+
+
+\end{document}
